@@ -29,7 +29,7 @@ function downloadImageByURL(url, filePath) {
   .pipe(fs.createWriteStream('./avatars/' + filePath +'.png'));
 }
 
-getRepoContributors(process.argv[0], process.argv[1], function(users){
+getRepoContributors(process.argv[2], process.argv[3], function(users){
     users.forEach(function(user) {
       console.log(user.avatar_url)
       downloadImageByURL(user.avatar_url, user.login )
